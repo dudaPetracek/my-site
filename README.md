@@ -1,1 +1,2 @@
-# my-site
+# mysite
+Django Personal Blog
