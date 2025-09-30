@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Posts - Meu Blog{% endblock %}
+
+{% block content %}
+    <h2>Lista de Posts</h2>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{% url 'post_detail' post.id %}">{{ post.titulo }}</a>
+                <p>{{ post.conteudo|truncatechars:100 }}</p>
+            </li>
+        {% empty %}
+            <p>Nenhum post cadastrado.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}
